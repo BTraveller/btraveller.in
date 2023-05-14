@@ -794,13 +794,13 @@ if (typeof Object.create !== "function") {
                 support3d,
                 isTouch;
 
-            tempElem.style.cssText = "  -moz-transform:" + translate3D +
+            tempElem.style.min.cssText = "  -moz-transform:" + translate3D +
                                   "; -ms-transform:"     + translate3D +
                                   "; -o-transform:"      + translate3D +
                                   "; -webkit-transform:" + translate3D +
                                   "; transform:"         + translate3D;
             regex = /translate3d\(0px, 0px, 0px\)/g;
-            asSupport = tempElem.style.cssText.match(regex);
+            asSupport = tempElem.style.min.cssText.match(regex);
             support3d = (asSupport !== null && asSupport.length === 1);
 
             isTouch = "ontouchstart" in window || window.navigator.msMaxTouchPoints;
